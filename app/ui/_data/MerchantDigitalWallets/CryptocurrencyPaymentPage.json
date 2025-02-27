@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Currency Selection",
+    "description": "An extensive range of currencies are available to users for payment."
+  },
+  {
+    "id": 2,
+    "title": "QR Code & Address",
+    "description": "QR code enables fast and hassle-free transfers. Copy your address easily in just a click."
+  },
+  {
+    "id": 3,
+    "title": "Explorer",
+    "description": "Full information relating to your transactions are just a click away with blockchain explorer."
+  },
+  {
+    "id": 4,
+    "title": "Transaction History",
+    "description": "A detailed cryptocurrency report with complete transactions history is readily available."
+  },
+  {
+    "id": 5,
+    "title": "Payment Status",
+    "description": "Check your transaction status in real-time. Your transaction ID can be used to check for confirmations."
+  },
+  {
+    "id": 6,
+    "title": "Contact",
+    "description": "In case a customer has a question or an issue he can send the message to you on the payment page."
+  }
+]

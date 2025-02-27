@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "question": "How do I accept cryptocurrencies?",
+    "answer": "It’s really easy to integrate Coinsfish crypto payment gateway into your current operations or launch it as a new service. Forward us your request, proceed with the integration and you’re ready to offer your customers Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), Bitcoin Cash (BCH), Litecoin (LTC) and a whole range more as a payment method!"
+  },
+  {
+    "id": 2,
+    "question": "What cryptocurrencies are on offer?",
+    "answer": "Coinsfish can handle all your cryptocurrency processing needs with cryptos including Bitcoin, Ethereum, Litecoin, Bitcoin Cash, Monero, Binance Coin, Stellar, Zcash, Cardano, Ripple, Doge, TRON and etc. Please see full list <a href='/fees-pricing/'>here</a>."
+  },
+  {
+    "id": 3,
+    "question": "Are StableCoins and Tokens supported?",
+    "answer": "Yes, Tether, USD Coin, Binance USD, Paxos and many other are supported. Please see full list <a href='/fees-pricing/'>here</a>."
+  },
+  {
+    "id": 4,
+    "question": "Is a test account available?",
+    "answer": "Integration first takes place in a staging environment for the purpose of client testing. Production deployment only takes place after this process is approved so as to limit the risk of bugs during the production stage. This procedure ensures that you will have the most stable product on the market!"
+  },
+  {
+    "id": 5,
+    "question": "How do I integrate a crypto payment gateway?",
+    "answer": "Integrating cryptocurrency payments into your existing system couldn’t be easier. Integration is made via simple API in matter of minutes."
+  },
+  {
+    "id": 6,
+    "question": "Is Coinsfish secure?",
+    "answer": "Yes, of course! We take security very seriously and never ever compromise. As specialists in our field, we always offer our clients a safe, secure and reliable environment. Our API endpoints are encrypted through SSL so user traffic is secured when requesting data."
+  },
+  {
+    "id": 7,
+    "question": "Are automatic withdrawals supported?",
+    "answer": "Yes, automatic withdrawals are possible via secure API directly to your own or your clients’ wallet."
+  },
+  {
+    "id": 8,
+    "question": "Is it possible to add tokens?",
+    "answer": "Yes, you can integrate any tokens."
+  },
+  {
+    "id": 9,
+    "question": "Can I add coins?",
+    "answer": "Yes, we have all major coins and stablecoins. Simply get in touch if you require custom blockchain integration. Please see full list <a href='/fees-pricing/'>here</a>."
+  }
+]

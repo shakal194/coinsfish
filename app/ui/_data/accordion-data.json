@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Volatility protection",
+    "img": "<AccordionIcon1 />",
+    "desc": "Automatic conversion of incoming payments into stablecoins will protect against cryptocurrency volatility, same as the Withdrawal auto-convert feature, that allows you to withdraw your crypto in a preferred currency – and both features are completely free to use!"
+  },
+  {
+    "title": "Transactions status management",
+    "img": "<AccordionIcon2 />",
+    "desc": "Adjust the allowed payment accuracy, view if an invoice has been overpaid or underpaid and send an additional invoice to collect a remaining amount."
+  },
+  {
+    "title": "Flexible commissions for each coin",
+    "img": "<AccordionIcon3 />",
+    "desc": "Set additional commissions or add a discount for chosen coins."
+  },
+  {
+    "title": "Support team",
+    "img": "<AccordionIcon4 />",
+    "desc": "The support team, that is available in Telegram, by email, right on our website in the form of tickets or as a personal manager for our merchants, is always there to solve issues and answer your customers' questions instantly."
+  },
+  {
+    "title": "Mass payouts",
+    "img": "<AccordionIcon5 />",
+    "desc": "Make mass payouts to thousands of addresses with automatic conversion in just one moment."
+  }
+]

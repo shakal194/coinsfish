@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "title": "Wallets",
+    "imgSrc": "/svg/Wallets-1.svg",
+    "imgAlt": "Wallets",
+    "imgTitle": "Wallets-1",
+    "description": [
+      "Create new wallets and change settings for current ones",
+      "Confirmed & pending balances",
+      "Wallet currency & tags",
+      "Access rights for each wallet",
+      "Add emails to inform about new transactions",
+      "Log for each change in the wallet settings"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Transfers",
+    "description": [
+      "Transfer type & status",
+      "Transaction hash",
+      "Invoice or payout currency",
+      "Number of confirmations",
+      "Target amount, commission, rate & blockchain fee",
+      "Related operation ID",
+      "Status AML procedure"
+    ],
+    "imgSrc": "/svg/Transfers-2.svg",
+    "imgAlt": "Transfers",
+    "imgTitle": "Transfers"
+  },
+  {
+    "id": 3,
+    "title": "Deposits",
+    "description": [
+      "Create new deposits and change settings for current ones",
+      "Custom of number confirmation block for callback",
+      "Custom label, tracking ID & callbacks",
+      "Tracking ID & paid amount",
+      "Deposit currency & tags",
+      "View payment page",
+      "Monitor deposit status"
+    ],
+    "imgSrc": "/svg/Deposits_Menu_Full-1.svg",
+    "imgAlt": "Deposits Menu",
+    "imgTitle": "Deposits Menu"
+  },
+  {
+    "id": 4,
+    "title": "Payouts",
+    "description": [
+      "Create new payouts and change settings for current ones",
+      "Payouts currency & tags",
+      "Tracking ID & paid amount",
+      "Choosing amount of blockchain fees",
+      "Configurable number of confirmation per payout",
+      "Custom label, tracking ID & callbacks"
+    ],
+    "imgSrc": "/svg/Payouts-1.svg",
+    "imgAlt": "Payouts",
+    "imgTitle": "Payouts"
+  },
+  {
+    "id": 5,
+    "title": "Action logs / Events",
+    "description": [
+      "Approve or cancel payouts created by staff users “Withdrawals with approval” role",
+      "Resend callback"
+    ],
+    "imgSrc": "/svg/Events-1.svg",
+    "imgAlt": "Events",
+    "imgTitle": "Events"
+  },
+  {
+    "id": 6,
+    "title": "Exchanges",
+    "description": [
+      "View exchange history and create new exchanges",
+      "Choose blockchain fee level for new exchanges",
+      "View exchange statuses",
+      "Choose source and destination wallets as well as exchange amount",
+      "View exchange transactions"
+    ],
+    "imgSrc": "/svg/Exchanges.svg",
+    "imgAlt": "Rates",
+    "imgTitle": "Rates"
+  },
+  {
+    "id": 7,
+    "title": "Rates Display",
+    "description": ["All available pairs", "Sell and Buy prices"],
+    "imgSrc": "/svg/Rates.svg",
+    "imgAlt": "Rates",
+    "imgTitle": "Rates"
+  }
+]

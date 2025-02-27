@@ -1,0 +1,40 @@
+{
+  "home": {
+    "nav": {
+      "home": "Home",
+      "aboutus": "About us",
+      "contact": "Contact",
+      "fee": "Fee",
+      "pricing": "Pricing",
+      "login": "Login",
+      "dashboard": "Dashboard"
+    },
+    "title": "Accept Bitcoin Payments with CoinsFish"
+  },
+  "signin": {
+    "title": "Sign in to continue",
+    "email": "Email",
+    "continue": "Continue",
+    "email_placeholder": "Enter your email address",
+    "otpcode": "OTP Code",
+    "otpcode_placeholder": "Enter OTP code",
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+    "password_text": "Includes at least one special symbol",
+    "password_text_2": "Contains 8 or more symbols",
+    "submit": "Submit",
+    "forgot": "Forgot your password?",
+    "notmember": "Not a member?",
+    "signup": "Sign up"
+  },
+  "dashboard": {
+    "nav": {
+      "home": "Home",
+      "invoices": "Invoices",
+      "customers": "Customers",
+      "settings": "Settings",
+      "merchants": "Merchants",
+      "logout": "Log Out"
+    }
+  }
+}

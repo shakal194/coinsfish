@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Merchant Digital Wallets",
+    "link": "/cryptocurrency-payment-gateway",
+    "description": "Crypto payments solution for businesses looking to offer customers another method of payment and attract new clients who wish to pay with cryptocurrency.",
+    "features": [
+      "Seamless payment processing",
+      "Global market reach",
+      "Enhanced security"
+    ],
+    "imgSrc": "/svg/Invoices.svg",
+    "imgAlt": "Invoices",
+    "imgTitle": "Invoices"
+  },
+  {
+    "id": 2,
+    "title": "Enterprise Blockchain Wallets",
+    "link": "/enterprise-blockchain-wallets",
+    "features": [
+      "Robust infrastructure tailored for businesses",
+      "Scalable solution",
+      "Comprehensive reporting and analytics tools for transactions."
+    ],
+    "description": "Blockchain wallet solution that lets you get access to all blockchains through a single API. You don’t need to spend time and effort integrating with each blockchain separately, use one solution and get access to all blockchains.",
+    "imgSrc": "/svg/Wallets-2.svg",
+    "imgAlt": "Wallets",
+    "imgTitle": "Wallets"
+  }
+]

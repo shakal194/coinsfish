@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Create a widget for your project",
+    "tagline": "No need to fiddle with the code – just copy and paste the generated html into your page",
+    "image_desctop": "/bg_payforms.png",
+    "image_tablet": "/bg_payforms_tablet.png",
+    "image_mobile": "/bg_payforms_mobile.png"
+  },
+  {
+    "id": 2,
+    "title": "Branded payment page",
+    "tagline": "Place your logo on payment page and customize its appearance freely",
+    "image_desctop": "/bg_payforms.png",
+    "image_tablet": "/bg_payforms_tablet.png",
+    "image_mobile": "/bg_payforms_mobile.png"
+  },
+  {
+    "id": 3,
+    "title": "CRMS airdrops are already in the Awards",
+    "tagline": "What are you waiting for? Start collecting your valuable rewards for completing simple tasks.",
+    "image_desctop": "CRMS-banner-light.webp",
+    "image_tablet": "CRMS-banner-light.webp",
+    "image_mobile": "CRMS-banner-mobile-light.webp"
+  }
+]

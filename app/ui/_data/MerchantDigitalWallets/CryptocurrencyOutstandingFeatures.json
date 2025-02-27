@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Premium support",
+    "description": "Our team of experts is available 24/7 to help with technical enquiries and provide practical assistance and guidance whenever it’s needed. Simply create a ticket and track its status directly in the system. You can attach photos, videos and files at your convenience.",
+    "imgSrc": "/svg/Helpdesk-1.svg",
+    "imgAlt": "Helpdesk",
+    "imgTitle": "Helpdesk"
+  },
+  {
+    "id": 2,
+    "title": "Transaction speed controlled by client",
+    "description": "The speed of transactions can be controlled by each client. The higher the fee, the quicker the transaction! You can also specify a custom fee.",
+    "imgSrc": "/svg/Transaction-speed.svg",
+    "imgAlt": "Transaction speed",
+    "imgTitle": "Transaction speed"
+  },
+  {
+    "id": 3,
+    "title": "Notification System",
+    "description": "Clients are able to receive an email notification for any transfer in the system by specifying particular email addresses within the “Notification addresses” field.",
+    "imgSrc": "/svg/Notifications.svg",
+    "imgAlt": "Notifications",
+    "imgTitle": "Notifications"
+  },
+  {
+    "id": 4,
+    "title": "Flexible Payouts",
+    "description": "Flexible withdrawals are allowing for payouts in different currencies than the wallet currency.",
+    "imgSrc": "/svg/Flexible-Payouts.svg",
+    "imgAlt": "Flexible Payouts",
+    "imgTitle": "Flexible Payouts"
+  },
+  {
+    "id": 5,
+    "title": "Fee Replacement",
+    "description": "If the fee chosen is too small and the transfer is stuck (not yet confirmed) it can be replaced with a higher fee. You will see the “Replace by fee” button in Transfer settings. Here, a new fee will be suggested that is higher than the previous one.",
+    "imgSrc": "/svg/Replace-by-fee-1.svg",
+    "imgAlt": "Replace by fee",
+    "imgTitle": "Replace by fee"
+  },
+  {
+    "id": 6,
+    "title": "Address Book",
+    "description": "A client is able to save any address, then use it for initiating payouts. Once a new address is entered, the client ticks a checkbox and it will be subsequently saved in the Address book.",
+    "imgSrc": "/svg/Flexible-Payouts-1.svg",
+    "imgAlt": "Flexible Payouts",
+    "imgTitle": "Flexible Payouts"
+  },
+  {
+    "id": 7,
+    "title": "Crypto Withdrawal",
+    "description": "Crypto settlements straight to your blockchain wallet. There are options for one-time withdrawals or you can set up regular payouts.",
+    "imgSrc": "/svg/Create-new-bank-withdrawals_Empty.svg",
+    "imgAlt": "withdrawals",
+    "imgTitle": "Create new bank withdrawals_Empty"
+  },
+  {
+    "id": 8,
+    "title": "Set Time Limits for Transactions",
+    "description": "You can set time limits for deposits. If the deposit has not been received in specified time, the status of the deposit will change to the appropriate one.",
+    "imgSrc": "/svg/Create-new-deposit_Merchant-advanced.svg",
+    "imgAlt": "Set Time Limits for Transactions",
+    "imgTitle": "Set Time Limits for Transactions"
+  },
+  {
+    "id": 9,
+    "title": "Specify Deposit Ranges",
+    "description": "Clients can limit deposits by amount. If the deposit doesn’t fall within the specified range, the deposit status will be automatically set to “unresolved” until further action.",
+    "imgSrc": "/svg/Specify-Deposit-Ranges.svg",
+    "imgAlt": "Specify Deposit Ranges",
+    "imgTitle": "Specify Deposit Ranges"
+  }
+]

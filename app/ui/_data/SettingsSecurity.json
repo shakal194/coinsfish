@@ -1,0 +1,92 @@
+{
+  "settingsOptions": [
+    {
+      "category": "Account Security",
+      "options": [
+        "Authorization",
+        "Change password",
+        "Reset password",
+        "Add, change or disable PIN code",
+        "Change security settings",
+        "Delete account"
+      ]
+    },
+    {
+      "category": "General Security",
+      "options": [
+        "Withdraw from Personal",
+        "Recurrence payment",
+        "Transfer from Personal to Business",
+        "Delete merchant",
+        "Refund invoice",
+        "Auto-Withdrawal",
+        "Turn on/off whitelist management",
+        "Add addresses to Addresses’s whitelist",
+        "Add IP to API’s whitelist",
+        "Payment API key",
+        "Payout API key",
+        "Unfreeze staked funds"
+      ]
+    }
+  ],
+  "initialSettings": {
+    "Account Security": {
+      "Authorization": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Change password": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Reset password": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Add, change or disable PIN code": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Change security settings": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Delete account": { "Email": false, "Google2Fa": false, "SMS": false }
+    },
+    "General Security": {
+      "Withdraw from Personal": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Recurrence payment": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Transfer from Personal to Business": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Delete merchant": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Refund invoice": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Auto-Withdrawal": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Turn on/off whitelist management": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Add addresses to Addresses’s whitelist": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Add IP to API’s whitelist": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      },
+      "Payment API key": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Payout API key": { "Email": false, "Google2Fa": false, "SMS": false },
+      "Unfreeze staked funds": {
+        "Email": false,
+        "Google2Fa": false,
+        "SMS": false
+      }
+    }
+  }
+}

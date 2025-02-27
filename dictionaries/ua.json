@@ -1,0 +1,40 @@
+{
+  "home": {
+    "nav": {
+      "home": "Главная",
+      "aboutus": "Про Нас",
+      "contact": "Контакти",
+      "fee": "Комісія",
+      "pricing": "Ціни",
+      "login": "Логін",
+      "dashboard": "Дашборд"
+    },
+    "title": "Приймайте Bitcoin платежі з CoinsFish"
+  },
+  "signin": {
+    "title": "Залогінься щоб продовжити",
+    "email": "Email",
+    "continue": "Продовжити",
+    "email_placeholder": "Введіть ваш email",
+    "otpcode": "ОТР Код",
+    "otpcode_placeholder": "Введіть ОТР код",
+    "password": "Пароль",
+    "password_placeholder": "Введіть Ваш пароль",
+    "password_text": "Має включати один спец.символ",
+    "password_text_2": "Має містити мін. 8 символів",
+    "submit": "Логін",
+    "forgot": "Забули свій пароль?",
+    "notmember": "Ще не з нами?",
+    "signup": "Зареєструватися"
+  },
+  "dashboard": {
+    "nav": {
+      "home": "Головна",
+      "invoices": "Іновйси",
+      "customers": "Клієнти",
+      "settings": "Налаштування",
+      "merchants": "Мерчанти",
+      "logout": "Вихід"
+    }
+  }
+}

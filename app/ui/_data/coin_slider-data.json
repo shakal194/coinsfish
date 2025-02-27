@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Bitcoin",
+    "coin": "BTC",
+    "image": "/svg/bitcoin_1.svg",
+    "image_dashboard": "/svg/bitcoin_dashboard.svg",
+    "background": "rgb(249 115 22)",
+    "network": [{ "id": 1, "name": "BTC", "description": "(BTC)" }]
+  },
+  {
+    "id": 2,
+    "title": "Tether",
+    "coin": "USDT",
+    "image": "/svg/tether.svg",
+    "image_dashboard": "/svg/tether_dashboard.svg",
+    "background": "rgb(80 175 149)",
+    "network": [
+      {
+        "id": 1,
+        "name": "BSC",
+        "description": "(BEP-20)"
+      },
+      { "id": 2, "name": "ETH", "description": "(ERC-20)" },
+      { "id": 3, "name": "Polygon", "description": "(ERC-20)" },
+      { "id": 4, "name": "Solana", "description": "Solana" },
+      { "id": 5, "name": "Tron", "description": "(TRC-20)" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Etherium",
+    "coin": "ETH",
+    "image": "/svg/etherium.svg",
+    "image_dashboard": "/svg/etherium_dashboard.svg",
+    "background": "rgb(98 126 234)",
+    "network": [
+      {
+        "id": 1,
+        "name": "BSC",
+        "description": "(BEP-20)"
+      },
+      { "id": 2, "name": "ETH", "description": "(ERC-20)" }
+    ]
+  }
+]

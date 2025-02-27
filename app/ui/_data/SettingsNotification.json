@@ -1,0 +1,101 @@
+{
+  "settingsOptions": [
+    {
+      "category": "Account notifications",
+      "options": [
+        "Authorization",
+        "Changing password",
+        "Add and Changing Email",
+        "Add and Changing phone"
+      ]
+    },
+    {
+      "category": "Personal wallet notifications",
+      "options": [
+        "New payment received to personal wallet",
+        "Success withdrawal",
+        "Fail withdrawal",
+        "New withdrawal",
+        "Transfer from Personal to Business",
+        "Transfer from Business to Personal"
+      ]
+    },
+    {
+      "category": "Business wallet notifications",
+      "options": [
+        "Request merchant API-key",
+        "Create merchant",
+        "Paid invoices",
+        "Payout API key",
+        "Partially paid invoices"
+      ]
+    }
+  ],
+  "initialSettings": {
+    "Account notifications": {
+      "Authorization": { "Email": false, "Telegram": false, "SMS": false },
+      "Changing password": { "Email": false, "Telegram": false, "SMS": false },
+      "Add and Changing Email": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Add and Changing phone": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      }
+    },
+    "Personal wallet notifications": {
+      "New payment received to personal wallet": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Success withdrawal": { "Email": false, "Telegram": false, "SMS": false },
+      "Fail withdrawal": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "New withdrawal": { "Email": false, "Telegram": false, "SMS": false },
+      "Transfer from Personal to Business": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Transfer from Business to Personal": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      }
+    },
+    "Business wallet notifications": {
+      "Request merchant API-key": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Create merchant": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Paid invoices": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Payout API key": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      },
+      "Partially paid invoices": {
+        "Email": false,
+        "Telegram": false,
+        "SMS": false
+      }
+    }
+  }
+}

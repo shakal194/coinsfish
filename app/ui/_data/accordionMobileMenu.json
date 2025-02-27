@@ -1,0 +1,60 @@
+{
+  "Merchant Digital Wallets": [
+    {
+      "title": "Merchant Digital Wallet Solution",
+      "link": "cryptocurrency-payment-gateway"
+    },
+    {
+      "title": "Available Currencies",
+      "link": "available-currencies"
+    },
+    {
+      "title": "Fees & Pricing",
+      "link": "fees-pricing"
+    },
+    {
+      "title": "Solution Comparison",
+      "link": "crypto-processing-solutions-comparison"
+    },
+    {
+      "title": "Minimum Deposits and Withdrawals",
+      "link": "minimum-deposits-withdrawals"
+    }
+  ],
+  "Enterprise Blockchain Wallets": [
+    {
+      "title": "Enterprise Blockchain Wallet Solution",
+      "link": "cryptocurrency-wallets"
+    },
+    {
+      "title": "Available Currencies",
+      "link": "available-currencies"
+    },
+    {
+      "title": "Fees & Pricing",
+      "link": "fees-pricing"
+    },
+    {
+      "title": "Solution Comparison",
+      "link": "crypto-processing-solutions-comparison"
+    },
+    {
+      "title": "Minimum Deposits and Withdrawals",
+      "link": "minimum-deposits-withdrawals"
+    }
+  ],
+  "Support": [
+    {
+      "title": "API",
+      "link": "api"
+    },
+    {
+      "title": "Release Notes",
+      "link": "release-notes"
+    },
+    {
+      "title": "Guides (How To)",
+      "link": "guides"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Enterprise Blockchain Wallets",
+    "items": [
+      {
+        "imgSrc": "/svg/Icons-7.svg",
+        "imgAlt": "Icons",
+        "title": "Crypto Brokers",
+        "text": "Offer your clients an opportunity to trade and deposit many different cryptocurrencies."
+      },
+      {
+        "imgSrc": "/svg/Icons-8.svg",
+        "imgAlt": "Icons",
+        "title": "Crypto Exchanges (CEX)",
+        "text": "The core mechanism behind every exchange. Our gateway provides the technology to handle all your crypto transactions."
+      },
+      {
+        "imgSrc": "/svg/Icons-9.svg",
+        "imgAlt": "Icons",
+        "title": "Converters",
+        "text": "Provide your clients with an ability to convert their crypto to any of the accepted currencies. Our solution offers user-friendly interface and industry leading exchange rates!"
+      },
+      {
+        "imgSrc": "/svg/Icons-5.svg",
+        "imgAlt": "Icons",
+        "title": "Mobile Wallet Apps",
+        "text": "Coinsbuy can be easily integrated with any mobile app. Offer your clients a way to securely store cryptocurrencies, tokens and stablecoins."
+      },
+      {
+        "imgSrc": "/svg/Icons-10.svg",
+        "imgAlt": "Icons",
+        "title": "Margin Exchanges",
+        "text": "Allow your clients to make spot purchases and sales of cryptocurrencies using margin. Coinsbuy has all the functionality needed to implement it!"
+      },
+      {
+        "imgSrc": "/svg/Icons-11.svg",
+        "imgAlt": "Icons",
+        "title": "Multi-Asset Brokers",
+        "text": "Add crypto as an additional asset to your platform as well as allow your clients a way to top up their accounts with crypto!"
+      }
+    ]
+  }
+]

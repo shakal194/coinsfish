@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Premium support",
+    "description": "Our team of experts is available 24/7 to help with technical enquiries and provide practical assistance and guidance whenever it’s needed. Simply create a ticket and track its status directly in the system. You can attach photos, videos and files at your convenience.",
+    "imgSrc": "/svg/Helpdesk-1.svg",
+    "imgAlt": "Helpdesk",
+    "imgTitle": "Helpdesk"
+  },
+  {
+    "id": 2,
+    "title": "Transaction speed controlled by client",
+    "description": "The speed of transactions can be controlled by each client. The higher the fee, the quicker the transaction! You can also specify a custom fee.",
+    "imgSrc": "/svg/Transaction-speed.svg",
+    "imgAlt": "Transaction speed",
+    "imgTitle": "Transaction speed"
+  },
+  {
+    "id": 3,
+    "title": "Notification System",
+    "description": "Clients are able to receive an email notification for any transfer in the system by specifying particular email addresses within the “Notification addresses” field.",
+    "imgSrc": "/svg/Notifications.svg",
+    "imgAlt": "Notifications",
+    "imgTitle": "Notifications"
+  },
+  {
+    "id": 4,
+    "title": "Flexible Payouts",
+    "description": "Flexible withdrawals are allowing for payouts in different currencies than the wallet currency.",
+    "imgSrc": "/svg/Flexible-Payouts.svg",
+    "imgAlt": "Flexible Payouts",
+    "imgTitle": "Flexible Payouts"
+  },
+  {
+    "id": 5,
+    "title": "Fee Replacement",
+    "description": "If the fee chosen is too small and the transfer is stuck (not yet confirmed) it can be replaced with a higher fee. You will see the “Replace by fee” button in Transfer settings. Here, a new fee will be suggested that is higher than the previous one.",
+    "imgSrc": "/svg/Replace-by-fee-1.svg",
+    "imgAlt": "Replace by fee",
+    "imgTitle": "Replace by fee"
+  },
+  {
+    "id": 6,
+    "title": "Instant Swaps",
+    "description": "Instant swap of funds when you wish to make payouts in a different currency. Swaps don’t rely on order books, allowing direct and instant trades between cryptocurrencies. B2BinPay makes this using the VWAP (Volume-Weighted Average Price). We gather these rates from leading centralised exchanges and carefully pick the best price from several sources.",
+    "imgSrc": "/svg/Select-wallet.svg",
+    "imgAlt": "Instant Swaps",
+    "imgTitle": "Instant Swaps"
+  },
+  {
+    "id": 7,
+    "title": "Activate the wallet yourself",
+    "description": "All wallets can be directly activated by the client by sending coins to the wallet.",
+    "imgSrc": "/svg/Transfers-1.svg",
+    "imgAlt": "Transfers",
+    "imgTitle": "Transfers"
+  },
+  {
+    "id": 8,
+    "title": "Crypto withdrawals",
+    "description": "Easily withdraw your cryptocurrency holdings with a simple and secure withdrawal process",
+    "imgSrc": "/svg/Create-new-payout_Enterprise_Filled_Fee-Low-2.svg",
+    "imgAlt": "Create new payout Enterprise Filled Fee",
+    "imgTitle": "Create new payout Enterprise Filled Fee"
+  }
+]

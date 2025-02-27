@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Convert",
+    "description": "Convert any part of your Bitcoin balance to another crypto whenever the need arises."
+  },
+  {
+    "id": 2,
+    "title": "Send",
+    "description": "Send any crypto to anyone, virtually anywhere in the world as an alternative to sending money."
+  },
+  {
+    "id": 3,
+    "title": "Hold",
+    "description": "You can store your Bitcoin and many other cryptocurrencies in your Coinsfish wallet."
+  },
+  {
+    "id": 4,
+    "title": "Create Payouts",
+    "description": "You can receive settlements quickly and conveniently via digital currencies."
+  },
+  {
+    "id": 5,
+    "title": "Accept",
+    "description": "Accept payments in Bitcoin, Ethereum, Ripple, Bitcoin cash, Litecoin and more."
+  }
+]

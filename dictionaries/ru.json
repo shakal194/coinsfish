@@ -1,0 +1,40 @@
+{
+  "home": {
+    "nav": {
+      "home": "Главная",
+      "aboutus": "О Нас",
+      "contact": "Контакты",
+      "fee": "Комиссия",
+      "pricing": "Цены",
+      "login": "Логин",
+      "dashboard": "Дашборд"
+    },
+    "title": "Принмайте Bitcoin платежи с CoinsFish"
+  },
+  "signin": {
+    "title": "Залогинься чтобы продолжить",
+    "email": "Email",
+    "continue": "продолжить",
+    "email_placeholder": "Enter your email address",
+    "otpcode": "OTP Code",
+    "otpcode_placeholder": "Enter OTP code",
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+    "password_text": "Includes at least one special symbol",
+    "password_text_2": "Contains 8 or more symbols",
+    "submit": "Submit",
+    "forgot": "Забыли свой пароль?",
+    "notmember": "Еще не с нами?",
+    "signup": "Sign up"
+  },
+  "dashboard": {
+    "nav": {
+      "home": "Главная",
+      "invoices": "Инвойсы",
+      "customers": "Клиенты",
+      "settings": "Настройки",
+      "merchants": "Мерчанты",
+      "logout": "Выход"
+    }
+  }
+}
