@@ -1,6 +1,6 @@
 'use client';
 
-import { Accordion, AccordionItem } from '@nextui-org/react';
+import { Accordion, AccordionItem } from '@heroui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ChevronUpIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -65,7 +65,7 @@ export default function AccordionHome() {
       </Accordion>
       <Link
         href="/"
-        className="flex h-16 items-center justify-center rounded-xl border-x border-y border-solid border-gray-700 bg-gray-200 bg-gray-200 uppercase dark:border-gray-300 dark:bg-gray-700"
+        className="flex h-16 items-center justify-center rounded-xl border-x border-y border-solid border-gray-700 bg-gray-200 uppercase dark:border-gray-300 dark:bg-gray-700"
       >
         <span>All features</span>
       </Link>

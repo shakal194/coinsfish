@@ -14,7 +14,7 @@ import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import Link from 'next/link';
 import { addUser, handleEmailSubmitRegister } from '@/app/lib/actions';
-import { Checkbox } from '@nextui-org/react';
+import { Checkbox } from '@heroui/react';
 import LoadingSpinner from '@/app/ui/_components/LoadingSpinner';
 
 export default function SignupForm() {

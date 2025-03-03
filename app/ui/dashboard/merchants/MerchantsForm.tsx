@@ -6,7 +6,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { useState, useEffect } from 'react';
 import { createMerchant } from '@/app/lib/actions';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Select, SelectItem, Avatar, Snippet } from '@nextui-org/react';
+import { Select, SelectItem, Avatar } from '@heroui/react';
 import coins from '@/app/ui/_data/coin_slider-data.json';
 import LoadingSpinner from '@/app/ui/_components/LoadingSpinner';
 
@@ -72,7 +72,7 @@ const MerchantForm = () => {
           {(coin: any) => (
             <SelectItem
               key={coin.coin}
-              value={coin.coin}
+              //value={coin.coin}
               textValue={coin.title}
             >
               <div className="flex items-center gap-2">

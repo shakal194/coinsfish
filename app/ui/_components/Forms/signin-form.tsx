@@ -9,8 +9,7 @@ import {
   ArrowRightIcon,
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormState } from 'react-dom';
 import { authenticate, handleEmailSubmitSign } from '@/app/lib/actions';
 import { useState } from 'react';
 import React from 'react';
@@ -19,11 +18,6 @@ import { Button } from '@/app/ui/button';
 import { useTranslations } from 'next-intl';
 
 export default function SignForm() {
-  /* const initialState = {
-    message: null,
-    errors: {},
-  };*/
-
   const t = useTranslations('signin');
 
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -59,6 +53,20 @@ export default function SignForm() {
   };
 
   const handleSubmitStep2 = () => {
+    const otpCodeInput = document.getElementById('otpcode') as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      'password',
+    ) as HTMLInputElement;
+
+    setErrorMessage('');
+
+    // Проверяем, заполнены ли оба поля (OTP и пароль)
+    if (!otpCodeInput?.value || !passwordInput?.value) {
+      // Если хотя бы одно поле пустое, показываем ошибку и не запускаем спиннер
+      setErrorMessage('Some input are empty.');
+      return;
+    }
+
     setShowSpinnerStep2(true);
   };
 
@@ -163,14 +171,6 @@ export default function SignForm() {
                   />
                   <ShieldCheckIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:text-slate-50 dark:peer-focus:text-slate-50" />
                 </div>
-                <div id="otpcode-error" aria-live="polite" aria-atomic="true">
-                  {/*{errorMessage && (
-                    <>
-                      <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-                      <p className="text-sm text-red-500">{errorMessage}</p>
-                    </>
-                  )}*/}
-                </div>
               </div>
               <div className="mt-4">
                 <label
@@ -210,7 +210,20 @@ export default function SignForm() {
                   </ul>
                 </div>
                 <div
-                  id="password-error"
+                  id="input-error"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  className="flex"
+                >
+                  {errorMessageForm && (
+                    <div className="mt-2 flex">
+                      <ExclamationCircleIcon className="mr-2 h-5 w-5 text-red-500" />
+                      <p className="text-sm text-red-500">{errorMessageForm}</p>
+                    </div>
+                  )}
+                </div>
+                <div
+                  id="form-error"
                   aria-live="polite"
                   aria-atomic="true"
                   className="flex"

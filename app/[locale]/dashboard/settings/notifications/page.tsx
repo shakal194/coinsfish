@@ -5,7 +5,7 @@ import {
   NotificationSettings,
   SettingsNotification,
 } from '@/app/lib/definitions';
-import { Accordion, AccordionItem } from '@nextui-org/react';
+import { Accordion, AccordionItem } from '@heroui/react';
 import settingsData from '@/app/ui/_data/SettingsNotification.json';
 
 /*const settingsOptions = [

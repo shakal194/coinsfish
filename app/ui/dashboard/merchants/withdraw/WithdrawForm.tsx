@@ -7,7 +7,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { useSession } from 'next-auth/react';
 import { fetchMerchantWallet } from '@/app/lib/actions';
-import { Select, SelectItem, Avatar, Snippet } from '@nextui-org/react';
+import { Select, SelectItem, Avatar, Snippet } from '@heroui/react';
 import Image from 'next/image';
 
 export default function ReceiveForm({
@@ -103,7 +103,7 @@ export default function ReceiveForm({
             {(coin: any) => (
               <SelectItem
                 key={coin.coin}
-                value={coin.coin}
+                //value={coin.coin}
                 textValue={coin.title}
               >
                 <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export default function ReceiveForm({
               {selectedCoinData?.network.map((network: any) => (
                 <SelectItem
                   key={network.name}
-                  value={network.name}
+                  //value={network.name}
                   textValue={network.description}
                 >
                   {network.name}
@@ -156,9 +156,7 @@ export default function ReceiveForm({
                 value=""
                 onChange={handleAddressChange}
               >
-                <SelectItem key="" value="">
-                  Create address for this coin
-                </SelectItem>
+                <SelectItem key="">Create address for this coin</SelectItem>
               </Select>
             ) : (
               <div>
@@ -174,7 +172,7 @@ export default function ReceiveForm({
                   {result.map((address, index) => (
                     <SelectItem
                       key={address}
-                      value={address}
+                      // value={address}
                       textValue={address}
                     >
                       <p className="text-[10px] md:text-[14px]">{address}</p>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { OptionSettings, Settings } from '@/app/lib/definitions';
-import { Accordion, AccordionItem } from '@nextui-org/react';
+import { Accordion, AccordionItem } from '@heroui/react';
 import settingsData from '@/app/ui/_data/SettingsSecurity.json';
 
 /*const settingsOptions = [

@@ -26,8 +26,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "@nextui-org/react": "^2.4.8",
-    "@nextui-org/spinner": "^2.0.34",
+    "@heroui/react": "^2.7.4",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "20.5.7",
     "@vercel/node": "^3.0.17",

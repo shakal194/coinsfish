@@ -6,11 +6,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { auth, signIn } from '@/auth';
 import { AuthError } from 'next-auth';
-import bcrypt from 'bcrypt';
-import { v4 as uuidv4 } from 'uuid';
 import axios, { AxiosError } from 'axios';
-import { useModal } from '@/app/ui/dashboard/merchants/context/ModalContext';
-import { error } from 'console';
 
 const apiMainUrl = process.env.NEXT_PUBLIC_API_MAIN_URL;
 const apiMiniUrl = process.env.NEXT_PUBLIC_API_MINI_URL;
@@ -182,6 +178,7 @@ export async function handleEmailSubmitSign(email: string) {
 }
 
 //SIGNIN
+
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
@@ -202,73 +199,6 @@ export async function authenticate(
   }
 }
 //END SIGNIN
-
-const CreateUser = z.object({
-  id: z.string(),
-  name: z.string({ invalid_type_error: 'Please input name.' }),
-  email: z.string({ invalid_type_error: 'Please input email.' }),
-  password: z.string({ invalid_type_error: 'Please input password.' }),
-  confirmPassword: z.string({ invalid_type_error: 'Please input password.' }),
-});
-
-export type UserState = {
-  errors?: {
-    email?: string[];
-    password?: string[];
-    confirmPassword?: string[];
-  };
-  message?: string | null;
-};
-
-export async function createUser(prevState: UserState, formData: FormData) {
-  const validatedFields = CreateUser.safeParse({
-    id: uuidv4(),
-    name: formData.get('name'),
-    email: formData.get('email'),
-    password: formData.get('password'),
-    confirmPassword: formData.get('confirmPassword'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing Fields. Failed to Create User.',
-    };
-  }
-
-  const { id, name, email, password, confirmPassword } = validatedFields.data;
-
-  const emailExist = await sql`SELECT email from users WHERE email = ${email}`;
-  if (emailExist.rows[0]) {
-    console.error(`Email - ${email} already exists`);
-    return {
-      errors: { email: ['Email already exists'] },
-    };
-  }
-
-  if (password !== confirmPassword) {
-    console.log('Passwords do not match');
-    return {
-      errors: { password: ['Password and Confirm Password do not match'] },
-    };
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  try {
-    await sql`
-      INSERT INTO users (id, name, email, password)
-      VALUES (${id}, ${name}, ${email}, ${hashedPassword})
-    `;
-    console.log('User inserted successfully.');
-  } catch (error) {
-    return {
-      message: 'Database Error: Failed to Create User.',
-    };
-  }
-  revalidatePath('/');
-  redirect('/success');
-}
 
 //BEGIN REGISTR API
 //Email Validate

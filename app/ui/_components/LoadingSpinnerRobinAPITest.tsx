@@ -1,6 +1,6 @@
 'use client';
 
-import { Spinner } from '@nextui-org/spinner';
+import { Spinner } from '@heroui/spinner';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 

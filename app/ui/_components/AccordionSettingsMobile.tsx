@@ -1,6 +1,6 @@
 'use client';
 
-import { Accordion, AccordionItem } from '@nextui-org/react';
+import { Accordion, AccordionItem } from '@heroui/react';
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { AccordionData, AccordionItemMobileMenu } from '@/app/lib/definitions';
