@@ -17,6 +17,7 @@ import LoadingSpinner from '@/app/ui/_components/LoadingSpinner';
 
 export default function RecoveryForm() {
   const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessageForm, setErrorMessageForm] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [step, setStep] = useState(1); // 1 - Email, 2 - OTP and Password
   const [email, setEmail] = useState('');
@@ -54,6 +55,27 @@ export default function RecoveryForm() {
   };
 
   const handleSubmitStep2 = () => {
+    const otpCodeInput = document.getElementById('otpcode') as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      'password',
+    ) as HTMLInputElement;
+    const confirmPasswordInput = document.getElementById(
+      'confirmPassword',
+    ) as HTMLInputElement;
+
+    setErrorMessageForm('');
+
+    // Проверяем, заполнены ли оба поля (OTP и пароль)
+    if (
+      !otpCodeInput?.value ||
+      !passwordInput?.value ||
+      !confirmPasswordInput?.value
+    ) {
+      // Если хотя бы одно поле пустое, показываем ошибку и не запускаем спиннер
+      setErrorMessageForm('Some input are empty.');
+      return;
+    }
+
     setShowSpinnerStep2(true); // Показываем спиннер при отправке формы
 
     // Отправка формы через серверные действия
@@ -266,6 +288,18 @@ export default function RecoveryForm() {
               <LoadingSpinner size="lg" color="white" />
             )}*/}
             {showSpinnerStep2 && <LoadingSpinner size="lg" color="white" />}
+            <div
+              id="form-error"
+              aria-live="polite"
+              aria-atomic="true"
+              className="mt-2"
+            >
+              {errorMessageForm && (
+                <p className="text-sm text-red-500 dark:text-red-400">
+                  {errorMessageForm}
+                </p>
+              )}
+            </div>
             {state.errors?.error && (
               <>
                 {state.errors.error.map((error: string) => (
