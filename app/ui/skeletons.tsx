@@ -236,9 +236,9 @@ export function WalletSkeleton() {
       <div
         className={`${shimmer} relative flex items-center overflow-hidden rounded-lg bg-gray-100 p-2 shadow-sm dark:bg-gray-800`}
       >
-        <div className="mr-2 h-11 w-32 rounded-lg rounded-md border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
-        <div className="mr-2 h-11 w-32 rounded-lg rounded-md border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
-        <div className="h-11 w-32 rounded-lg rounded-md border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
+        <div className="mr-2 h-11 w-32 rounded-lg  border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
+        <div className="mr-2 h-11 w-32 rounded-lg  border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
+        <div className="h-11 w-32 rounded-lg  border-2 bg-gray-200 dark:bg-gray-400 md:p-2 md:px-3" />
       </div>
       <div className="mt-6 flex gap-4">
         <div

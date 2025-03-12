@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "BTC-X.PRO",
+    "description": "Торгуйте без комісії протягом усього 2025 року",
+    "ogImageAlt": "Торгуйте без комісії протягом усього 2025 року"
+  },
   "home": {
     "nav": {
       "home": "Главная",
@@ -12,20 +17,49 @@
     "title": "Приймайте Bitcoin платежі з CoinsFish"
   },
   "signin": {
-    "title": "Залогінься щоб продовжити",
+    "title_signin": "Залогінься щоб продовжити",
+    "title_signup": "Створити акаунт",
+    "create_account": "Не має акаунту? Створіть!",
+    "have_account": "Вже є акаунт?",
     "email": "Email",
     "continue": "Продовжити",
     "email_placeholder": "Введіть ваш email",
-    "otpcode": "ОТР Код",
+    "otpcode": "ОТР код",
     "otpcode_placeholder": "Введіть ОТР код",
     "password": "Пароль",
     "password_placeholder": "Введіть Ваш пароль",
     "password_text": "Має включати один спец.символ",
     "password_text_2": "Має містити мін. 8 символів",
+    "confirm_password": "Підтвердіть Ваш пароль",
+    "confirm_password_placeholder": "Введіть Ваш пароль",
     "submit": "Логін",
     "forgot": "Забули свій пароль?",
-    "notmember": "Ще не з нами?",
-    "signup": "Зареєструватися"
+    "signin": "Авторизуватися",
+    "signup": "Зареєструватися",
+    "spinnerLabel": "Почекайте...",
+    "form_success_message": "Запит надіслано!",
+    "form_error_default": "Помилка відправки листа",
+    "form_error_unknown": "Невідома помилка",
+    "form_error_email": "Недійсний Email",
+    "form_error_email_validation": "Email вже використовується",
+    "form_error_email_empty": "Email обов’язково",
+    "form_error_email_notFound": "Email не знайдено",
+    "form_error_login_empty": "Login обов’язково",
+    "form_error_password_empty": "Пароль обов’язково",
+    "form_error_otp_notSend": "OTP код не відправлено",
+    "form_error_otpcode": "OTP код має включати 5 цифр",
+    "form_error_password": "Пароль має включати хоча б 8 символів",
+    "form_error_password_2": "Пароль має включати 1 спец.символ",
+    "form_error_confirm_password": "Паролі не співпадають",
+    "form_password_notMatch": "Паролі не співпадають",
+    "form_validate_login_password": "Невірний Логін/Пароль або OTP",
+    "form_validate_otpcode_notValid": "OTP код не валідний",
+    "form_validate_password": "Логін або пароль порожні",
+    "form_validate_errorValidation": "Помилка валідації. Користувач не створений",
+    "form_validate_loginExists": "Логін зайнятий",
+    "form_validate_errorTimeOut": "Щось пішло не так. Спробуйте пізніше",
+    "form_validate_errorDatabase": "Помилка сервісу: Користувач не створений",
+    "button": "Надіслати"
   },
   "dashboard": {
     "nav": {

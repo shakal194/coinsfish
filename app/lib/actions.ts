@@ -7,6 +7,7 @@ import { redirect } from 'next/navigation';
 import { auth, signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 import axios, { AxiosError } from 'axios';
+import { getTranslations } from 'next-intl/server';
 
 const apiMainUrl = process.env.NEXT_PUBLIC_API_MAIN_URL;
 const apiMiniUrl = process.env.NEXT_PUBLIC_API_MINI_URL;
@@ -125,10 +126,12 @@ export async function deleteInvoice(id: string) {
 //BEGIN SIGNIN
 //EmailValidate
 export async function handleEmailSubmitSign(email: string) {
+  const t = await getTranslations('signin');
+
   if (!email) {
-    console.error('Email can`t be empty.');
+    console.error(t('form_error_email_empty'));
     return {
-      errors: { email: ['Email can`t be empty.'] },
+      errors: { email: [t('form_error_email_empty')] },
     };
     //throw new Error('Email не может быть пустым.');
   }
@@ -142,9 +145,9 @@ export async function handleEmailSubmitSign(email: string) {
   };
 
   if (!validateEmail(email)) {
-    console.error('Input correct email');
+    console.error(t('form_error_email'));
     return {
-      errors: { email: ['Input correct email'] },
+      errors: { email: [t('form_error_email')] },
     };
     //throw new Error('Введите корректный email.');
   }
@@ -160,9 +163,9 @@ export async function handleEmailSubmitSign(email: string) {
     );
 
     if (emailValidation.status === 400) {
-      console.log(emailValidation.status, 'Email not found');
+      console.log(emailValidation.status, t('form_error_email_notFound'));
       return {
-        errors: { email: ['Email not found.'] },
+        errors: { email: [t('form_error_email_notFound')] },
       };
     }
 
@@ -172,8 +175,8 @@ export async function handleEmailSubmitSign(email: string) {
       body: JSON.stringify(email),
     });
   } catch (error) {
-    console.error('OTP Code don`t send:', error);
-    throw new Error('OTP Code don`t send.');
+    console.error(t('form_error_otp_notSend'), error);
+    throw new Error(t('form_error_otp_notSend'));
   }
 }
 
@@ -183,17 +186,18 @@ export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
 ) {
+  const t = await getTranslations('signin');
+
   try {
     await signIn('credentials', formData);
   } catch (error) {
     console.log('error', error);
     if (error instanceof AuthError) {
-      console.log('error type', error.type);
       switch (error.type) {
         case 'CredentialsSignin':
-          return 'Invalid credentials.';
+          return t('form_validate_login_password');
         default:
-          return 'Something went wrong.';
+          return t('form_validate_errorTimeOut');
       }
     }
     throw error;
@@ -204,10 +208,12 @@ export async function authenticate(
 //BEGIN REGISTR API
 //Email Validate
 export async function handleEmailSubmitRegister(email: string) {
+  const t = await getTranslations('signin');
+
   if (!email) {
-    console.error('Email can`t be empty.');
+    console.error(t('form_error_email_empty'));
     return {
-      errors: { email: ['Email can`t be empty.'] },
+      errors: { email: [t('form_error_email_empty')] },
     };
     //throw new Error('Email не может быть пустым.');
   }
@@ -221,9 +227,9 @@ export async function handleEmailSubmitRegister(email: string) {
   };
 
   if (!validateEmail(email)) {
-    console.error('Input correct email');
+    console.error(t('form_error_email'));
     return {
-      errors: { email: ['Input correct email'] },
+      errors: { email: [t('form_error_email')] },
     };
     //throw new Error('Введите корректный email.');
   }
@@ -239,9 +245,9 @@ export async function handleEmailSubmitRegister(email: string) {
     );
 
     if (emailValidation.status === 200) {
-      console.log(emailValidation.status, 'Email already exist');
+      console.log(emailValidation.status, t('form_error_email_validation'));
       return {
-        errors: { email: ['Email already exist.'] },
+        errors: { email: [t('form_error_email_validation')] },
       };
     }
 
@@ -251,40 +257,12 @@ export async function handleEmailSubmitRegister(email: string) {
       body: JSON.stringify(email),
     });
   } catch (error) {
-    console.error('OTP Code don`t send:', error);
-    throw new Error('OTP Code don`t send.');
+    console.error(t('form_error_otp_notSend'), error);
+    throw new Error(t('form_error_otp_notSend'));
   }
 }
 
 //ADD USER
-const AddUser = z
-  .object({
-    login: z.string({ invalid_type_error: 'Please input login.' }),
-    email: z.string({ invalid_type_error: 'Please input email.' }),
-    otpcode: z
-      .string({ invalid_type_error: 'Please input a valid OTP Code.' })
-      .regex(/^\d{5}$/, { message: 'OTP Code must be exactly 5 digits.' }),
-    password: z
-      .string({ invalid_type_error: 'Please input password.' })
-      .min(8, {
-        message: 'Passwords must contains 8 or more symbols.',
-      })
-      .regex(/[!@#$%^&*(),.?":{}|<>]/, {
-        message: 'Passwords must contains special symbols.',
-      }),
-    confirmPassword: z.string({
-      invalid_type_error: 'Please input confirm password.',
-    }),
-    privacy_and_terms: z.string({
-      invalid_type_error:
-        'Read and accept the Privacy Policy and Terms of Use.',
-    }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ['password'],
-    message: 'Passwords do not match.',
-  });
-
 export type AddUserState = {
   errors?: {
     email?: string[];
@@ -292,80 +270,120 @@ export type AddUserState = {
     otpcode?: string[];
     password?: string[];
     confirmPassword?: string[];
-    privacy_and_terms?: string[];
+    //privacy_and_terms?: string[];
     error?: string[];
   };
   message?: string | null;
 };
 
 export async function addUser(prevState: AddUserState, formData: FormData) {
+  const t = await getTranslations('signin');
+
+  const AddUser = z
+    .object({
+      login: z.string({ invalid_type_error: 'Please input login.' }),
+      email: z.string({ invalid_type_error: 'Please input email.' }),
+      otpcode: z
+        .string({ invalid_type_error: 'Please input a valid OTP Code.' })
+        .regex(/^\d{5}$/, { message: 'OTP Code must be exactly 5 digits.' }),
+      password: z
+        .string({ invalid_type_error: 'Please input password.' })
+        .min(8, {
+          message: 'Passwords must contains 8 or more symbols.',
+        })
+        .regex(/[!@#$%^&*(),.?":{}|<>]/, {
+          message: 'Passwords must contains special symbols.',
+        }),
+      confirmPassword: z.string({
+        invalid_type_error: 'Please input confirm password.',
+      }),
+      /*privacy_and_terms: z.string({
+      invalid_type_error:
+        'Read and accept the Privacy Policy and Terms of Use.',
+    }),*/
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      path: ['password'],
+      message: 'Passwords do not match.',
+    });
+
   const validatedFields = AddUser.safeParse({
     email: formData.get('email'),
     login: formData.get('email'),
     otpcode: formData.get('otpcode'),
     password: formData.get('password'),
     confirmPassword: formData.get('confirmPassword'),
-    privacy_and_terms: formData.get('privacy_and_terms'),
+    //privacy_and_terms: formData.get('privacy_and_terms'),
   });
 
   console.log(validatedFields);
 
-  if (!validatedFields.success) {
+  if (validatedFields.error) {
     // Собираем все ошибки
     const errors = validatedFields.error.flatten().fieldErrors;
 
     // Дополнительная проверка для логики, не учтенной в `zod`
     if (formData.get('password') !== formData.get('confirmPassword')) {
-      errors.password = [...(errors.password || []), 'Passwords do not match.'];
+      errors.password = [
+        ...(errors.password || []),
+        t('form_password_notMatch'),
+      ];
     }
 
     return {
-      errors,
-      message: 'Validation Failed. Failed to Create User.',
+      errors: errors,
+      message: t('form_errorValidation'),
     };
   }
 
-  const { login, email, otpcode, password } = validatedFields.data;
+  if (validatedFields.success) {
+    const { login, email, otpcode, password } = validatedFields.data;
 
-  try {
-    const response = await fetch(`${apiRegisterUrl}/Registration/adduser`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: '*/*' },
-      body: JSON.stringify({ email, otpcode, password, login }),
-    });
+    try {
+      const response = await fetch(`${apiRegisterUrl}/Registration/adduser`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: '*/*' },
+        body: JSON.stringify({ email, otpcode, password, login }),
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Error:', errorData);
-      if (errorData === 6) {
-        return {
-          errors: { otpcode: ['OTP Code not valid'] },
-        };
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error:', errorData);
+        switch (errorData) {
+          case 6:
+            return {
+              errors: { otpcode: [t('form_validate_otpcode_notValid')] },
+            };
+          case 0:
+            return {
+              errors: { email: [t('form_validate_loginExists')] },
+            };
+          case 3:
+            return {
+              errors: { password: [t('form_validate_password')] },
+            };
+
+          case 14:
+            return {
+              errors: { email: [t('form_validate_errorDatabase')] },
+            };
+
+          //throw new Error(`Request failed with status ${response.status}`);
+        }
       }
-      if (errorData === 0) {
-        return {
-          errors: { email: ['Login already exists'] },
-        };
-      }
-      if (errorData === 14) {
-        return {
-          message: 'Something went wrong. Please try again later.',
-        };
-      }
-      //throw new Error(`Request failed with status ${response.status}`);
+
+      console.log(
+        'Response status -',
+        response.status,
+        'Response statusText -',
+        response.statusText,
+        'User add successfully.',
+      );
+    } catch (error) {
+      return {
+        message: t('form_errorTimeOut'),
+      };
     }
-
-    console.log(
-      'Response status -',
-      response.status,
-      'Response statusText -',
-      response.statusText,
-    );
-    console.log('User add successfully.');
-  } catch (error) {
-    return {
-      message: 'Database Error: Failed to Create User.',
-    };
   }
   revalidatePath('/');
   redirect('/signin');

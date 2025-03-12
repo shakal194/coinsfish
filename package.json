@@ -17,7 +17,7 @@
   "main": "next.config.js",
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
@@ -38,25 +38,23 @@
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
     "framer-motion": "^11.8.0",
-    "next": "^14.0.2",
-    "next-auth": "^5.0.0-beta.4",
+    "next": "^15.2.2",
+    "next-auth": "^5.0.0-beta.25",
     "next-intl": "^3.26.5",
     "next-themes": "^0.3.0",
     "notiflix": "^3.2.7",
-    "postcss": "8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "react-slick": "^0.29.0",
     "swiper": "^11.0.5",
     "typescript": "5.2.2",
     "use-debounce": "^10.0.0",
     "uuid": "^9.0.1",
-    "zod": "^3.22.2"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
-    "@types/react": "18.2.21",
+    "@types/react": "^18.3.1",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "18.2.14",
     "@types/uuid": "^9.0.8",
@@ -67,7 +65,8 @@
     "eslint-config-prettier": "9.0.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
-    "tailwindcss": "^3.4.13"
+    "react": "^18.3.1",
+    "tailwindcss": "^3.4.17"
   },
   "engines": {
     "node": ">=18.17.0"

@@ -36,6 +36,11 @@ const config: Config = {
           500: '#0070F3',
           600: '#2F6FEB',
         },
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        danger: 'var(--danger)',
+        secondary: 'var(--secondary)',
+        primary: 'var(--primary)',
       },
     },
     keyframes: {
@@ -47,7 +52,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    //require('@tailwindcss/forms'),
     heroui(),
     function ({
       addUtilities,

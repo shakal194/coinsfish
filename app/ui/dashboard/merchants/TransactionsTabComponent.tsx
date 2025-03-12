@@ -13,81 +13,80 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  getKeyValue,
   Spinner,
+  Snippet,
+  Button,
+  Pagination,
+  getKeyValue,
 } from '@heroui/react';
+import Notiflix from 'notiflix';
 
 interface TransactionItem {
   id: string;
   txid: string;
-  name?: string; // Добавьте другие поля в зависимости от ваших данных
 }
 
-export default function TransactionsTabComponent(walletName: {
-  walletName: string;
-}) {
+interface TransactionsTabComponentProps {
+  incomingTransactions: string[]; // Ожидаем массив транзакций
+}
+
+export default function TransactionsTabComponent({
+  incomingTransactions,
+}: TransactionsTabComponentProps) {
   const [selected, setSelected] = useState<string | number>('signin');
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
   const columnsIncomingTransactions = [
-    { key: 'id', label: 'id', id: '1' },
-    { key: 'txid', label: 'txid', id: '2' },
+    { id: '1', key: 'id', label: 'id' },
+    { id: '2', key: 'txid', label: 'TxID' },
+    { id: '3', key: 'txid_explorer' },
   ];
 
-  const columnsOutcomingTransactions = [
-    { key: 'id', label: 'id' },
-    { key: 'txid', label: 'txid' },
-  ];
+  const handleCopyTxId = (txid: string) => {
+    navigator.clipboard.writeText(txid).then(
+      () => {
+        Notiflix.Notify.success('Transaction ID copied');
+      },
+      (err) => {
+        Notiflix.Notify.warning('Failed to copy Transaction ID');
+      },
+    );
+  };
 
-  const list = useAsyncList<TransactionItem>({
-    async load({ signal }) {
-      const res = await fetch('https://swapi.py4e.com/api/people/?search', {
-        signal,
-      });
-      const json = await res.json();
-      setIsLoading(false);
+  const list = useAsyncList({
+    async load({ signal, cursor }) {
+      if (cursor) {
+        setPage((prev) => prev + 1);
+      }
+
+      if (!cursor) {
+        setIsLoading(false);
+      }
 
       return {
-        items: json.results,
+        items: incomingTransactions.map((txid, index) => ({
+          id: index + 1,
+          txid,
+        })),
       };
     },
     async sort({ items, sortDescriptor }) {
-      // Убедитесь, что 'a' и 'b' имеют правильный тип
       return {
-        items: items.sort((a: TransactionItem, b: TransactionItem) => {
-          // Получаем значения из объектов
-          const first = a[sortDescriptor.column as keyof TransactionItem];
-          const second = b[sortDescriptor.column as keyof TransactionItem];
-
-          // Преобразуем значения в числа, если это строки, иначе оставляем как есть
-          const firstParsed =
-            first !== undefined && !isNaN(Number(first))
-              ? Number(first)
-              : first;
-          const secondParsed =
-            second !== undefined && !isNaN(Number(second))
-              ? Number(second)
-              : second;
-
+        items: items.sort((a: any, b: any) => {
+          const first = a[sortDescriptor.column as keyof typeof a];
+          const second = b[sortDescriptor.column as keyof typeof b];
           let cmp = 0;
 
-          // Сравниваем либо как числа, либо как строки
-          if (
-            typeof firstParsed === 'number' &&
-            typeof secondParsed === 'number'
-          ) {
-            cmp =
-              firstParsed < secondParsed
-                ? -1
-                : firstParsed > secondParsed
-                  ? 1
-                  : 0;
-          } else {
-            // Если это строки, используем обычное строковое сравнение
-            cmp = (firstParsed as string).localeCompare(secondParsed as string);
+          // Проверка, если это число, то сортируем как числа
+          if (!isNaN(first) && !isNaN(second)) {
+            cmp = Number(first) - Number(second);
+          } else if (typeof first === 'string' && typeof second === 'string') {
+            // Если это строки, сравниваем их
+            cmp = first.localeCompare(second);
           }
 
-          // Если сортировка по убыванию, меняем знак сравнения
+          // Если сортировка по убыванию
           if (sortDescriptor.direction === 'descending') {
             cmp *= -1;
           }
@@ -98,14 +97,13 @@ export default function TransactionsTabComponent(walletName: {
     },
   });
 
+  const hasMore = page < 9;
+
   return (
-    <>
+    <div className="flex w-full flex-col">
       <Tabs
-        aria-label="Tabs colors"
-        color="secondary"
-        radius="lg"
-        variant="underlined"
-        className="rounded-lg border-1 bg-background"
+        color="primary"
+        variant="bordered"
         selectedKey={selected}
         onSelectionChange={setSelected}
       >
@@ -116,14 +114,30 @@ export default function TransactionsTabComponent(walletName: {
                 isStriped
                 aria-label="Transactions"
                 color="primary"
-                defaultSelectedKeys={['2']}
+                defaultSelectedKeys={['0']}
                 selectionMode="single"
                 sortDescriptor={list.sortDescriptor}
                 onSortChange={list.sort}
+                /*bottomContent={
+                  hasMore && !isLoading ? (
+                    <div className="flex w-full justify-center">
+                      <Button
+                        isDisabled={list.isLoading}
+                        variant="flat"
+                        onPress={list.loadMore}
+                      >
+                        {list.isLoading && <Spinner color="white" size="sm" />}
+                        Load More
+                      </Button>
+                    </div>
+                  ) : null
+                }*/
               >
                 <TableHeader>
                   {columnsIncomingTransactions.map((column) => (
-                    <TableColumn key={column.key}>{column.label}</TableColumn>
+                    <TableColumn allowsSorting key={column.key}>
+                      {column.label}
+                    </TableColumn>
                   ))}
                 </TableHeader>
                 <TableBody
@@ -132,13 +146,22 @@ export default function TransactionsTabComponent(walletName: {
                   items={list.items}
                   loadingContent={<Spinner label="Loading..." />}
                 >
-                  {(item) => (
-                    <TableRow key={item.name}>
-                      {(columnKey) => (
-                        <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-                      )}
+                  {list.items.map((item: any, index: number) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.id}</TableCell>
+                      <TableCell>{item.txid}</TableCell>
+                      <TableCell>
+                        <Snippet
+                          color="default"
+                          hideSymbol
+                          size="sm"
+                          className="bg-inherit"
+                          content={item.txid}
+                          onCopy={() => handleCopyTxId(item.txid)}
+                        ></Snippet>
+                      </TableCell>
                     </TableRow>
-                  )}
+                  ))}
                 </TableBody>
               </Table>
             </CardBody>
@@ -175,19 +198,13 @@ export default function TransactionsTabComponent(walletName: {
                   items={list.items}
                   loadingContent={<Spinner label="Loading..." />}
                 >
-                  {(item) => (
-                    <TableRow key={item.name}>
-                      {(columnKey) => (
-                        <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-                      )}
-                    </TableRow>
-                  )}
+                  {[]}
                 </TableBody>
               </Table>
             </CardBody>
           </Card>
         </Tab>
       </Tabs>
-    </>
+    </div>
   );
 }

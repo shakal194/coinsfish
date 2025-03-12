@@ -1,19 +1,21 @@
 import '@/app/ui/global.css';
 import { inter, lusitana } from '@/app/ui/fonts';
-import Providers from '@/app/[locale]/providers';
-import { HeroUIProvider } from '@heroui/react';
+import { Providers, NextUIProviders } from '@/app/[locale]/providers';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { SessionProvider } from 'next-auth/react';
-import Header from '@/app/ui/_components/Headers/Header';
-import Footer from '@/app/ui/footer';
+import { generateMetadata } from '@/app/lib/MetaData';
+
+export { generateMetadata };
+
+type Params = Promise<{ locale: string }>;
 
 export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Params;
 }) {
   const { locale } = await params;
 
@@ -25,13 +27,13 @@ export default async function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Providers>
-            <HeroUIProvider>
+            <NextUIProviders>
               <SessionProvider>
                 {/*<Header />*/}
                 {children}
                 {/*<Footer />*/}
               </SessionProvider>
-            </HeroUIProvider>
+            </NextUIProviders>
           </Providers>
         </NextIntlClientProvider>
       </body>

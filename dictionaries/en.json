@@ -1,4 +1,9 @@
 {
+  "metadata": {
+    "title": "CoinsFish",
+    "description": "Trade commission-free throughout the year 2025",
+    "ogImageAlt": "Send, Store, Exchange and Accept Cryptocurrency"
+  },
   "home": {
     "nav": {
       "home": "Home",
@@ -12,7 +17,10 @@
     "title": "Accept Bitcoin Payments with CoinsFish"
   },
   "signin": {
-    "title": "Sign in to continue",
+    "title_signin": "Sign in",
+    "title_signup": "Sign up",
+    "create_account": "Need to create an account?",
+    "have_account": "Already have an account?",
     "email": "Email",
     "continue": "Continue",
     "email_placeholder": "Enter your email address",
@@ -22,10 +30,35 @@
     "password_placeholder": "Enter your password",
     "password_text": "Includes at least one special symbol",
     "password_text_2": "Contains 8 or more symbols",
+    "confirm_password": "Confirm Password",
+    "confirm_password_placeholder": "Enter your password",
     "submit": "Submit",
     "forgot": "Forgot your password?",
-    "notmember": "Not a member?",
-    "signup": "Sign up"
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "spinnerLabel": "Loading...",
+    "form_success_message": "Request sent",
+    "form_error_default": "Error sending email",
+    "form_error_unknown": "An unknown error occurred",
+    "form_error_email": "Invalid email address",
+    "form_error_email_validation": "Email already exist",
+    "form_error_email_empty": "Email is required",
+    "form_error_email_notFound": "Email not found",
+    "form_error_login_empty": "Login is required",
+    "form_error_password_empty": "Password is required",
+    "form_error_otp_notSend": "OTP Code don`t send",
+    "form_error_otpcode": "OTP Code must be exactly 5 digits",
+    "form_error_password": "Password must contain at least 8 characters",
+    "form_error_password_2": "Password must include at least 1 symbol",
+    "form_password_notMatch": "Passwords do not match",
+    "form_validate_login_password": "Incorrect Login/Password or OTP",
+    "form_validate_otpcode_notValid": "OTP Code not valid",
+    "form_validate_password": "Login or password was empty",
+    "form_validate_errorValidation": "Validation Failed. Failed to Create User",
+    "form_validate_loginExists": "Login already exists",
+    "form_validate_errorTimeOut": "Something went wrong. Please try again later",
+    "form_validate_errorDatabase": "Database Error: Failed to Create User",
+    "button": "Send"
   },
   "dashboard": {
     "nav": {

@@ -392,6 +392,36 @@ export async function fetchMerchantById(id: string) {
   }
 }
 
+export async function fetchIncomingTransactionsMerchantById(
+  address: string,
+  typeCurrency: string,
+) {
+  noStore();
+  const session = await auth();
+  const apiKey = session?.user?.apiKey;
+
+  try {
+    const response = await axios.post(
+      `${apiMainUrl}/Transaction/get-transactions-incoming-ids-by-address`,
+      { address: address, typeCurrency: typeCurrency },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: '*/*',
+          'X-Api-Key': apiKey,
+        },
+      },
+    );
+
+    const fetchIncomingTransactions = response.data;
+
+    return fetchIncomingTransactions;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch Incoming Transactions.');
+  }
+}
+
 /*
 export async function fetchMerchantWallet(
   walletName: string,

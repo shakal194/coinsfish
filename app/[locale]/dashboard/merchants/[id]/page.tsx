@@ -1,5 +1,9 @@
 import Breadcrumbs from '@/app/ui/dashboard/merchants/breadcrumbs';
-import { fetchMerchantById } from '@/app/lib/data';
+import {
+  fetchMerchantById,
+  fetchIncomingTransactionsMerchantById,
+} from '@/app/lib/data';
+import { fetchMerchantWallet } from '@/app/lib/actions';
 import { notFound } from 'next/navigation';
 import BalanceWrapper from '@/app/ui/dashboard/balance';
 import { Suspense } from 'react';
@@ -12,7 +16,8 @@ import { BanknotesIcon } from '@heroicons/react/24/outline';
 import TransactionsTabComponent from '@/app/ui/dashboard/merchants/TransactionsTabComponent';
 import { auth } from '@/auth';
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const id = params.id;
 
   const session = await auth();
@@ -22,6 +27,18 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const merchantName = merchant.nameWallet;
   const merchantBalance = merchant.Balance;
+  const merchantTypeCurrency = merchant.typeCurency;
+
+  const response = await fetchMerchantWallet(
+    merchantName,
+    merchantTypeCurrency,
+  );
+  const address = response.message[0];
+
+  const incomingTransactions = await fetchIncomingTransactionsMerchantById(
+    address,
+    merchantTypeCurrency,
+  );
 
   if (!merchant) {
     notFound();
@@ -70,7 +87,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
       </div>
       <div className="mx-auto mt-10">
-        <TransactionsTabComponent walletName={merchantName} />
+        <TransactionsTabComponent incomingTransactions={incomingTransactions} />
       </div>
       <MerchantMenuPage apiKey={apiKey} nameWallet={merchant.nameWallet} />
     </main>

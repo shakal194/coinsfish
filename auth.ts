@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
+import { getTranslations } from 'next-intl/server';
 
 const apiRegisterUrl = process.env.NEXT_PUBLIC_API_REGISTR_URL;
 
@@ -21,19 +22,22 @@ const config = {
         otpcode: {},
       },
       async authorize(credentials) {
+        const t = await getTranslations('signin');
         const parsedCredentials = z
           .object({
             email: z
-              .string({ invalid_type_error: 'Please input Email' })
+              .string({ invalid_type_error: t('form_error_email_empty') })
               .email(),
             password: z
-              .string({ invalid_type_error: 'Please input Email' })
+              .string({ invalid_type_error: t('form_error_password_empty') })
               .min(8),
             otpcode: z
-              .string({ invalid_type_error: 'Please input OTP Code' })
-              .length(5, { message: 'OTP code must contains 5 symbols' }) // Проверяем, что длина строки 5
+              .string({
+                invalid_type_error: t('form_validate_otpcode_notValid'),
+              })
+              .length(5, { message: t('form_error_otpcode') }) // Проверяем, что длина строки 5
               .regex(/^\d+$/, {
-                message: 'OTP code must include only digits', // Проверяем, что строка состоит только из цифр
+                message: t('form_validate_otpcode_notValid'), // Проверяем, что строка состоит только из цифр
               }),
           })
           .safeParse(credentials);
@@ -60,18 +64,16 @@ const config = {
             // Если пользователь найден и авторизация успешна
             if (res.ok && user) {
               return user;
+            } else {
+              console.log('ERROR', user);
+              return null;
             }
-
-            console.log(res);
-            // Возвращаем null, если авторизация не удалась
-            return null;
           } catch (error) {
             console.error('Error:', error);
             return null;
           }
         }
 
-        console.log('Invalid credentials');
         return null;
       },
     }),

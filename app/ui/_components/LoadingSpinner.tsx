@@ -3,6 +3,7 @@
 import { Spinner } from '@heroui/spinner';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface LoadingSpinner {
   size?: 'sm' | 'md' | 'lg';
@@ -10,6 +11,8 @@ interface LoadingSpinner {
 }
 
 const LoadingSpinner: React.FC<LoadingSpinner> = ({ size = 'lg' }) => {
+  const t = useTranslations('signin');
+
   const { theme, resolvedTheme } = useTheme();
   const [spinnerColor, setSpinnerColor] = useState<'primary' | 'white'>(
     'primary',
@@ -33,7 +36,7 @@ const LoadingSpinner: React.FC<LoadingSpinner> = ({ size = 'lg' }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-200 bg-opacity-50">
-      <Spinner size={size} label="Loading..." color={spinnerColor} />
+      <Spinner size={size} label={t('spinnerLabel')} color={spinnerColor} />
     </div>
   );
 };

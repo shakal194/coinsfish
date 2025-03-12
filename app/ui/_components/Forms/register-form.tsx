@@ -325,7 +325,7 @@ export default function SignupForm() {
                     </label>
                   </Checkbox>
                 </div>
-                <div
+                {/*<div
                   id="privacy_and_terms-error"
                   aria-live="polite"
                   aria-atomic="true"
@@ -342,7 +342,7 @@ export default function SignupForm() {
                         </p>
                       </div>
                     ))}
-                </div>
+                </div>*/}
               </div>
             </div>
             <Button

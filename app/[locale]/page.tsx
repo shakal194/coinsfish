@@ -1,19 +1,12 @@
 import Header from '@/app/ui/_components/Headers/Header';
 import Footer from '@/app/ui/footer';
 import Image from 'next/image';
-import { Metadata } from 'next';
 import HomeSession from '@/app/ui/_components/Session/HomeSession';
 import HomeOurProducts from '@/app/ui/_components/HomeOurProducts';
 import HomeUseCasesSection from '@/app/ui/_components/HomeUseCasesSection';
 import HaveAQuestion from '@/app/ui/_components/HaveAQuestion';
 import HeaderNavMenu from '@/app/ui/_components/HeaderNavMenu';
 import { useTranslations } from 'next-intl';
-
-export const metadata: Metadata = {
-  title: 'CoinsFish Home Page',
-  description:
-    'Welcome to CoinsFish. Helps You Receive Payments From Anyone In The World.',
-};
 
 export default function Page() {
   const t = useTranslations('home');

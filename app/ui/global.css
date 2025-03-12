@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --heroui-background: #000000;
+  --background: #000000;
+  --foreground: #ffffff;
+  --danger: #f31260;
+  --secondary: #FE9900;
+  --primary: #0070F3;
+}
 
 input[type='number'] {
   -moz-appearance: textfield;
