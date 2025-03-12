@@ -1,11 +1,10 @@
 import '@/app/ui/global.css';
 import { inter, lusitana } from '@/app/ui/fonts';
-
-import { getMessages } from 'next-intl/server';
-import { SessionProvider } from 'next-auth/react';
 import Providers from '@/app/[locale]/providers';
 import { HeroUIProvider } from '@heroui/react';
 import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { SessionProvider } from 'next-auth/react';
 import Header from '@/app/ui/_components/Headers/Header';
 import Footer from '@/app/ui/footer';
 
@@ -21,7 +20,7 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       {/*<body className={`${lusitana.className} antialiased`}>*/}
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>

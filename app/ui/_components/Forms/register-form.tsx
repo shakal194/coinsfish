@@ -56,6 +56,8 @@ export default function SignupForm() {
   };
 
   const handleSubmitStep2 = () => {
+    console.log('start ', state.errors);
+
     const otpCodeInput = document.getElementById('otpcode') as HTMLInputElement;
     const passwordInput = document.getElementById(
       'password',
@@ -77,11 +79,15 @@ export default function SignupForm() {
       return;
     }
 
+    console.log('otp, passwordInput, confirmPass dont empty', state.errors);
+
     setShowSpinnerStep2(true);
 
     // Отправка формы через серверные действия
     setTimeout(() => {
+      console.log('start setTimeout', state.errors);
       if (state.errors) {
+        console.log('state errors est`', state.errors);
         // Если есть ошибка, скрываем спиннер и показываем ошибку
         setShowSpinnerStep2(false);
       }

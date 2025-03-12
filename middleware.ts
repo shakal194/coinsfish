@@ -8,7 +8,7 @@ import { Locale, i18n } from '@/i18n.config';
 
 const locales = [...i18n.locales];
 const defaultLocale = i18n.defaultLocale;
-const localePrefix = 'always';
+const localePrefix = i18n.localePrefix;
 
 const publicPages = [
   '/',
@@ -70,6 +70,7 @@ const authMiddleware = auth((req) => {
   if (!session && !isAuthPage) {
     const signInUrl = new URL('/signin', req.nextUrl);
     signInUrl.searchParams.set('callbackUrl', pathname);
+
     return NextResponse.redirect(signInUrl);
   }
 

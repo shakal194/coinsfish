@@ -16,11 +16,14 @@ import React from 'react';
 import LoadingSpinner from '@/app/ui/_components/LoadingSpinner';
 import { Button } from '@/app/ui/button';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function SignForm() {
   const t = useTranslations('signin');
 
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
 
   const [errorMessageForm, setErrorMessage] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -237,6 +240,7 @@ export default function SignForm() {
                 </div>
               </div>
             </div>
+            <input type="hidden" name="redirectTo" value={callbackUrl} />
             <Button
               className="mt-4 w-full"
               type="submit"

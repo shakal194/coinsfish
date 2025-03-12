@@ -9,6 +9,7 @@ import WithdrawButton from '@/app/ui/dashboard/merchants/withdraw/WithdrawButton
 import MerchantMenuPage from '@/app/ui/dashboard/merchants/MerchantsMenu';
 import { CreateWallet } from '@/app/ui/dashboard/merchants/wallet/buttons';
 import { BanknotesIcon } from '@heroicons/react/24/outline';
+import TransactionsTabComponent from '@/app/ui/dashboard/merchants/TransactionsTabComponent';
 import { auth } from '@/auth';
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -67,6 +68,9 @@ export default async function Page({ params }: { params: { id: string } }) {
           <ReceiveButton id={id} walletName={merchantName} />
           <WithdrawButton id={id} walletName={merchantName} />
         </div>
+      </div>
+      <div className="mx-auto mt-10">
+        <TransactionsTabComponent walletName={merchantName} />
       </div>
       <MerchantMenuPage apiKey={apiKey} nameWallet={merchant.nameWallet} />
     </main>

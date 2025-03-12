@@ -186,8 +186,9 @@ export async function authenticate(
   try {
     await signIn('credentials', formData);
   } catch (error) {
-    console.log(error);
+    console.log('error', error);
     if (error instanceof AuthError) {
+      console.log('error type', error.type);
       switch (error.type) {
         case 'CredentialsSignin':
           return 'Invalid credentials.';
@@ -306,6 +307,8 @@ export async function addUser(prevState: AddUserState, formData: FormData) {
     confirmPassword: formData.get('confirmPassword'),
     privacy_and_terms: formData.get('privacy_and_terms'),
   });
+
+  console.log(validatedFields);
 
   if (!validatedFields.success) {
     // Собираем все ошибки
