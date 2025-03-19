@@ -25,15 +25,16 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 
   const merchant = await fetchMerchantById(id);
 
-  const merchantName = merchant.nameWallet;
+  const merchantName = merchant.walletName;
   const merchantBalance = merchant.Balance;
-  const merchantTypeCurrency = merchant.typeCurency;
+  const merchantTypeCurrency = merchant.typeCurrency;
 
   const response = await fetchMerchantWallet(
     merchantName,
     merchantTypeCurrency,
   );
   const address = response.message[0];
+  console.log(merchant);
 
   const incomingTransactions = await fetchIncomingTransactionsMerchantById(
     address,
