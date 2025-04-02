@@ -814,7 +814,7 @@ export async function testMiniApiCoreConnection() {
 
 export async function testRegistrationApiToMainApi() {
   return testApiConnection(
-    `${apiRegisterUrl}/Batman/tset-connection-main-api`,
+    `${apiRegisterUrl}/Batman/test-connection-main-api`,
     'Connected.',
     'Bad request',
     'Error occurred while connecting to the main API.',
